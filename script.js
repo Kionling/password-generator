@@ -8,6 +8,9 @@ var specialc ="!@#$%^&*()+?-_+=~`";
 var opc = ""
 var password = ""
 
+function generatePassword(){
+
+
 
 
 
@@ -26,8 +29,11 @@ opc = numc
 if (lowUpNumSpecial === "special"){
   opc = specialc 
 }
-if (opc === ""){
-  alert("You have incorrect criteria entry.")
+//giving error parameters 
+
+if (opc === "" || lengthpw < 8 || lengthpw > 128){
+  alert("You have incorrect criteria entry.\n\n Check the enteries you have entered..\nlength: " + lengthpw + "\nType of characters is incorrect: " + lowUpNumSpecial  )
+  l
 }
 else{
 
@@ -52,8 +58,8 @@ for(var i = 0; i < lengthpw; i++){
  // alert("This is the generated password " + password)
 
 }
-
-
+ return password
+} 
 
 
 
@@ -63,7 +69,8 @@ for(var i = 0; i < lengthpw; i++){
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
+  //Resets values so it doesn't repeat
+  passwordText.value = ""
   passwordText.value = password;
 
 }
