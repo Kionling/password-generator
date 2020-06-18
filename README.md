@@ -1,2 +1,1 @@
-# password-generator
-Javascript password generator
+# Password Generator
