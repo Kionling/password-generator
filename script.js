@@ -7,6 +7,7 @@ var numc = "0123456789";
 var specialc ="!@#$%^&*()+?-_+=~`";
 var opc = ""
 var password = ""
+var allc = lowerc + numc + specialc + upperc;
 
 function generatePassword(){
 
@@ -15,7 +16,7 @@ function generatePassword(){
 
 
 var lengthpw = prompt("Type password length from 8 to 128", "8") * 1;
-var lowUpNumSpecial = prompt("Type the type of characters you want (Lowercase, uppercase, numerical, or special)", "lowercase");
+var lowUpNumSpecial = prompt("Type the type of characters you want (Lowercase, uppercase, numerical, or mixed )", "lowercase",);
 
 if(lowUpNumSpecial==="lowercase"){
   opc = lowerc 
@@ -29,16 +30,17 @@ opc = numc
 if (lowUpNumSpecial === "special"){
   opc = specialc 
 }
+if (lowUpNumSpecial === "mixed"){
+  opc = allc
+}
+
+
 //giving error parameters 
 if (opc === "" || lengthpw < 8 || lengthpw > 128){
   alert("You have incorrect criteria entry.\n\n Check the enteries you have entered..\nlength: " + lengthpw + "\nType of characters is incorrect: " + lowUpNumSpecial  )
   l
 }
 else{
-
-
-
-
 
 
 
