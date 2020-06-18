@@ -1,6 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+var passwordText = document.getElementById("passwordfield");
 var lowerc="abcdefghijklmnopqrstuvwxyz";
 var upperc="ABCDEFGHIGJKLMNOPQRSTUVWXYZ";
 var numc = "0123456789";
@@ -30,7 +30,6 @@ if (lowUpNumSpecial === "special"){
   opc = specialc 
 }
 //giving error parameters 
-
 if (opc === "" || lengthpw < 8 || lengthpw > 128){
   alert("You have incorrect criteria entry.\n\n Check the enteries you have entered..\nlength: " + lengthpw + "\nType of characters is incorrect: " + lowUpNumSpecial  )
   l
@@ -43,11 +42,11 @@ else{
 
 
 
-//alert(lengthpw)
 
 for(var i = 0; i < lengthpw; i++){
 
-  var num = (Math.random() * opc.length).toFixed(0)
+  var num = (Math.random() * (opc.length - 1)).toFixed(0)
+  
 
   //alert(num)
 
@@ -67,11 +66,13 @@ for(var i = 0; i < lengthpw; i++){
 //need to create variables for all types of characters (Num, special, uppercase, lowercase)
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  var passwordGen = generatePassword();
+  // var passwordText = document.querySelector("#passwordfield");
   //Resets values so it doesn't repeat
-  passwordText.value = ""
-  passwordText.value = password;
+
+  //check
+  passwordText.value = passwordGen;
+  password = "";
 
 }
 
